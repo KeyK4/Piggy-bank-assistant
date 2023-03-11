@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">PiBA</string>
+    <string name="home_page_caption">Добро пожаловать!</string>
+    <string name="add_income_caption">Добавление дохода</string>
+    <string name="income_str">Доход</string>
+    <string name="consumption_str">Расход</string>
+    <string name="add_str">Добавить</string>
+    <string name="cancel_str">Отмена</string>
+    <string name="pattern_str">Шаблон</string>
+    <string name="sum_str">Сумма</string>
+    <string name="sum_saving_str">Сумма накоплений</string>
+    <string name="category_history_caption">Название категории</string>
+    <string name="total_str">Накоплено</string>
+    <string name="replenish_str">Пополнить</string>
+    <string name="subtract_str">Вычесть</string>
+    <string name="history_str">История</string>
+    <string name="default_num">0</string>
+    <string name="category_add_caption">Создание категории</string>
+    <string name="category_add_button_str">+Создать категорию</string>
+    <string name="category_name">Название</string>
+    <string name="nominal">Номинал</string>
+    <string name="start_sum">Начальная сумма</string>
+    <string name="category_color">Цвет</string>
+    <string name="pattern_add_caption">Создание шаблона</string>
+    <string name="financial_reserve">Финансовая подушка</string>
+    <string name="category">Категория</string>
+    <string name="percent">%</string>
+    <string name="hundred">100</string>
+    <string name="create">Создать</string>
+    <string name="confirm">ОК</string>
+    <string name="error_no_category">Необходимо создать категории на главной странице</string>
+    <string name="error_field_no_num">Введите число в поле номинала</string>
+    <string name="error_field_no_int">Введите целое число</string>
+    <string name="error_sum_percentages">Сумма процентов не равна 100</string>
+    <string name="settings">Настройки</string>
+    <string name="back_str">Назад</string>
+    <string name="wipe_data">Удалить все данные</string>
+    <string name="data_wiped_message">Данные удалены</string>
+
+
+</resources>

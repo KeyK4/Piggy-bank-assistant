@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width = "match_parent"
+    android:layout_height="wrap_content"
+    android:insetBottom="10dp"
+    >
+    <ripple android:color="@color/invisible">
+        <item>
+            <shape android:shape="rectangle">
+                <margin
+                    android:bottom="10dp"
+                    />
+            </shape>
+        </item>
+    </ripple>
+</inset>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoryAddActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_btn"
+        android:layout_width="202dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/gray_rounded"
+        android:text="@string/back_str"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_btn"
+        android:layout_width="202dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/green_button"
+        android:onClick="income_btn_onClick"
+        android:text="@string/add_str"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/back_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/name_enter_box"
+        android:layout_width="277dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/light_gray_rounded"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/replenish_text" />
+
+    <TextView
+        android:id="@+id/replenish_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="221dp"
+        android:text="@string/category_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hello_cat_View2" />
+
+    <TextView
+        android:id="@+id/history_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/category_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amount_enter_box" />
+
+    <EditText
+        android:id="@+id/amount_enter_box"
+        android:layout_width="278dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/light_gray_rounded"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingLeft="15dp"
+        android:text="@string/default_num"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="164dp"
+        android:text="@string/start_sum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_enter_box" />
+
+    <TextView
+        android:id="@+id/Hello_cat_View2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/category_add_caption"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--suppress AndroidDomInspection -->
+    <RadioGroup
+        android:id="@+id/radioGroupMain"
+        android:layout_width="293dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_text">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="305sp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/back_btn"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/brown_radio"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_brown"
+                android:checked="true"
+                android:onClick="group1Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_brown" />
+
+            <RadioButton
+                android:id="@+id/red_radio"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_red"
+                android:onClick="group1Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_red" />
+
+            <RadioButton
+                android:id="@+id/red2_radio"
+                android:layout_width="45dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_red2"
+                android:onClick="group1Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_red2" />
+
+            <RadioButton
+                android:id="@+id/orange_radio"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_orange"
+                android:onClick="group1Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_orange" />
+
+            <RadioButton
+                android:id="@+id/yellow_radio"
+                android:layout_width="43dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_yellow"
+                android:onClick="group1Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_yellow" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="305sp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/green_radio"
+                android:layout_width="46dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_green2"
+                android:onClick="group2Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_green2" />
+
+            <RadioButton
+                android:id="@+id/blue_radio"
+                android:layout_width="42dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_blue"
+                android:onClick="group2Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_blue" />
+
+            <RadioButton
+                android:id="@+id/darkblue_radio"
+                android:layout_width="44dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_blue2"
+                android:onClick="group2Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_blue2" />
+
+            <RadioButton
+                android:id="@+id/purple_radio"
+                android:layout_width="44dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_purple"
+                android:onClick="group2Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_purple" />
+
+            <RadioButton
+                android:id="@+id/violet_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15sp"
+                android:buttonTint="@color/light_violet"
+                android:onClick="group2Cheked"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/light_violet" />
+        </RadioGroup>
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

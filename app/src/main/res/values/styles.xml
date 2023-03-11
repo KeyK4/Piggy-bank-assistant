@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonMainStyle" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_main</item>
+    </style>
+    <style name="ButtonRedStyle" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/light_green</item>
+        <item name="colorControlHighlight">@color/light_red</item>
+        <item name="android:layout_width">221dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/red_button</item>
+        <item name="android:backgroundTint">@color/light_red</item>
+    </style>
+    <style name="ButtonGreenStyle" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">221dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/green_button</item>
+    </style>
+    <style name="RoundedCornerButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="background">@drawable/btn_rounded_corner</item>
+        <item name="colorButtonNormal">#1a237e</item>
+        <item name="colorControlHighlight">#673ab7</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+<!--        <item name="android:windowActionBar">false</item>-->
+<!--        <item name="android:windowNoTitle">true</item>-->
+        <item name="android:statusBarColor">@color/statusbar</item>
+
+    </style>
+</resources>

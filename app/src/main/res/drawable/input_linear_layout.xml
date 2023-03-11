@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width ="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <ripple android:color="@color/light_gray">
+        <item>
+            <shape android:shape="rectangle">
+                <padding
+                    android:left="15dp"/>
+            </shape>
+        </item>
+    </ripple>
+</inset>
