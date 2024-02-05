@@ -1,4 +1,4 @@
-package com.example.piggy_bank_assistant
+package com.example.piggy_bank_assistant.presentation
 
 import Models.PatternIncome
 import android.annotation.SuppressLint
@@ -16,11 +16,13 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import android.widget.LinearLayout.LayoutParams
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.updateLayoutParams
-import db.CategoryManager
-import db.PatternManager
+import com.example.piggy_bank_assistant.R
+import com.example.piggy_bank_assistant.financialReserveId
+import com.example.piggy_bank_assistant.data.db.CategoryManager
+import com.example.piggy_bank_assistant.data.db.DbHelper
+import com.example.piggy_bank_assistant.data.db.PatternManager
 
 
 class PatternAddActivity : AppCompatActivity() {
@@ -51,13 +53,13 @@ class PatternAddActivity : AppCompatActivity() {
         {
             while (this?.moveToNext()!!) {
                 val id = cursor?.getString(cursor.getColumnIndexOrThrow(
-                    db.DbHelper.ID_COL)).toString().toLong()
+                    DbHelper.ID_COL)).toString().toLong()
                 if (id == financialReserveId)
                     continue
                 categories.add(cursor?.getString(cursor.getColumnIndexOrThrow(
-                    db.DbHelper.NAME_COl)).toString())
+                    DbHelper.NAME_COl)).toString())
                 catColors.add(cursor?.getString(cursor.getColumnIndexOrThrow(
-                    db.DbHelper.COLOR_COL)).toString().toInt())
+                    DbHelper.COLOR_COL)).toString().toInt())
             }
         }
 

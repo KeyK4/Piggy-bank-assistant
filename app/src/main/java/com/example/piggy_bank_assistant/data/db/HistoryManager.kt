@@ -1,4 +1,4 @@
-package db
+package com.example.piggy_bank_assistant.data.db
 
 import android.content.ContentValues
 import android.content.Context

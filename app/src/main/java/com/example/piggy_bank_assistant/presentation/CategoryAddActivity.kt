@@ -1,12 +1,12 @@
-package com.example.piggy_bank_assistant
+package com.example.piggy_bank_assistant.presentation
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import db.CategoryManager
+import com.example.piggy_bank_assistant.R
+import com.example.piggy_bank_assistant.data.db.CategoryManager
 
 
 class CategoryAddActivity : AppCompatActivity() {

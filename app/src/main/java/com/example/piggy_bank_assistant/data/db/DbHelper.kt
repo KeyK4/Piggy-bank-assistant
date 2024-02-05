@@ -1,4 +1,4 @@
-package db
+package com.example.piggy_bank_assistant.data.db
 
 import android.content.ContentValues
 import android.content.Context
@@ -52,7 +52,7 @@ class DbHelper(context: Context) :
                 "$PERCENTAGE_COL INTEGER NOT NULL, " +
                 "FOREIGN KEY ($CAT_ID_COL) REFERENCES $CATEGORIES_TABLE_NAME($ID_COL)"+
                 " ON DELETE CASCADE, " +
-                "FOREIGN KEY ($PAT_ID_COL) REFERENCES ${PATTERNS_TABLE_NAME}($ID_COL)"+
+                "FOREIGN KEY ($PAT_ID_COL) REFERENCES $PATTERNS_TABLE_NAME($ID_COL)"+
                 " ON DELETE CASCADE" + ")"
         db.execSQL(query)
 

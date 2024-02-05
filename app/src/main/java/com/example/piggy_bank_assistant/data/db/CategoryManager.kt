@@ -1,4 +1,4 @@
-package db
+package com.example.piggy_bank_assistant.data.db
 
 import android.content.ContentValues
 import android.content.Context
@@ -71,12 +71,14 @@ class CategoryManager (context_: Context)
         {
             while (this.moveToNext()) {
                 oldAmount = cursor.getString(cursor.getColumnIndexOrThrow(
-                    DbHelper.AMOUNT_COL)).toFloat()
+                    DbHelper.AMOUNT_COL
+                )).toFloat()
             }
         }
         val values = ContentValues()
         values.put(DbHelper.AMOUNT_COL, amount+oldAmount)
-        db.update(DbHelper.CATEGORIES_TABLE_NAME, values,
+        db.update(
+            DbHelper.CATEGORIES_TABLE_NAME, values,
             "${DbHelper.ID_COL}=$id", arrayOf())
 
         db.close()

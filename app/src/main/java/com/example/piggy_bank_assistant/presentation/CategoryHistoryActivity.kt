@@ -1,4 +1,4 @@
-package com.example.piggy_bank_assistant
+package com.example.piggy_bank_assistant.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,12 +10,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.updateLayoutParams
-import db.CategoryManager
-import db.DbHelper
-import db.HistoryManager
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-import java.util.*
+import com.example.piggy_bank_assistant.R
+import com.example.piggy_bank_assistant.data.db.CategoryManager
+import com.example.piggy_bank_assistant.data.db.DbHelper
+import com.example.piggy_bank_assistant.data.db.HistoryManager
 
 class CategoryHistoryActivity : AppCompatActivity() {
     var id = 0
@@ -74,12 +72,14 @@ class CategoryHistoryActivity : AppCompatActivity() {
                     setMargins(0, 0,0,30)
                 }
                 val amount = cursor.getString(cursor.getColumnIndexOrThrow(
-                    DbHelper.AMOUNT_COL)).toFloat()
+                    com.example.piggy_bank_assistant.data.db.DbHelper.AMOUNT_COL)).toFloat()
                 val date = cursor.getString(cursor.getColumnIndexOrThrow(
-                    DbHelper.DATE_COL))
+                    com.example.piggy_bank_assistant.data.db.DbHelper.DATE_COL))
                 val amountText = createTextView(amount.toString(), Gravity.LEFT)
                 if(amount > 0)
-                    amountText.setTextColor(ContextCompat.getColor(applicationContext, R.color.green))
+                    amountText.setTextColor(ContextCompat.getColor(applicationContext,
+                        R.color.green
+                    ))
                 val dateText = createTextView(date, Gravity.RIGHT)
                 linearLayout.addView(amountText)
                 linearLayout.addView(dateText)

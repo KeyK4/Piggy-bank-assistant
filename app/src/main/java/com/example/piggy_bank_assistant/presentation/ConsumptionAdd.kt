@@ -1,6 +1,5 @@
-package com.example.piggy_bank_assistant
+package com.example.piggy_bank_assistant.presentation
 
-import Models.PatternIncome
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
@@ -17,12 +16,12 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import android.widget.LinearLayout.LayoutParams
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.updateLayoutParams
 import androidx.core.widget.addTextChangedListener
-import db.CategoryManager
-import db.PatternManager
+import com.example.piggy_bank_assistant.R
+import com.example.piggy_bank_assistant.data.db.CategoryManager
+import com.example.piggy_bank_assistant.data.db.DbHelper
 
 
 class ConsumptionAdd : AppCompatActivity() {
@@ -53,9 +52,9 @@ class ConsumptionAdd : AppCompatActivity() {
         {
             while (this?.moveToNext()!!) {
                 categories.add(cursor?.getString(cursor.getColumnIndexOrThrow(
-                    db.DbHelper.NAME_COl)).toString())
+                    DbHelper.NAME_COl)).toString())
                 catColors.add(cursor?.getString(cursor.getColumnIndexOrThrow(
-                    db.DbHelper.COLOR_COL)).toString().toInt())
+                    DbHelper.COLOR_COL)).toString().toInt())
             }
         }
 

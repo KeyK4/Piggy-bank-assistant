@@ -1,11 +1,11 @@
-package com.example.piggy_bank_assistant
+package com.example.piggy_bank_assistant.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import db.CategoryManager
-import db.DbHelper
+import com.example.piggy_bank_assistant.R
+import com.example.piggy_bank_assistant.data.db.CategoryManager
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

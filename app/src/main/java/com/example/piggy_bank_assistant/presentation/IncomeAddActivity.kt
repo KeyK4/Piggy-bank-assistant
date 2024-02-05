@@ -1,25 +1,22 @@
-package com.example.piggy_bank_assistant
+package com.example.piggy_bank_assistant.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import Models.PatternIncome
 import android.content.Context
 import android.content.Intent
 import android.database.Cursor
-import android.text.InputFilter
-import android.text.InputType
 import android.util.DisplayMetrics
 import android.util.TypedValue
-import android.view.Gravity
 import android.view.View
 import android.widget.*
 import android.widget.LinearLayout.LayoutParams
 import androidx.core.content.ContextCompat
 import androidx.core.view.updateLayoutParams
 import androidx.core.widget.addTextChangedListener
-import db.CategoryManager
-import db.DbHelper
-import db.PatternManager
+import com.example.piggy_bank_assistant.R
+import com.example.piggy_bank_assistant.data.db.CategoryManager
+import com.example.piggy_bank_assistant.data.db.DbHelper
+import com.example.piggy_bank_assistant.data.db.PatternManager
 
 
 class IncomeAddActivity : AppCompatActivity() {
@@ -72,7 +69,7 @@ class IncomeAddActivity : AppCompatActivity() {
         {
             while (this?.moveToNext()!!) {
                 patterns.add(cursor?.getString(cursor.getColumnIndexOrThrow(
-                    db.DbHelper.NAME_COl)).toString())
+                    com.example.piggy_bank_assistant.data.db.DbHelper.NAME_COl)).toString())
             }
         }
         val categories: Array<String> = patterns.toTypedArray()
