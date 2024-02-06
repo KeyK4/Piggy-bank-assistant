@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.core.content.ContextCompat
 import com.example.piggy_bank_assistant.R
 import com.example.piggy_bank_assistant.financialReserveId
-import kotlinx.coroutines.test.withTestContext
 
 class CategoryManager (context_: Context)
 {

@@ -8,6 +8,7 @@ import androidx.room.Update
 import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.CATEGORIES_TABLE_NAME
 import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.CATEGORY_PATTERN_PROPORTION_TABLE_NAME
 import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.CAT_ID_COL
+import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.ID_COL
 import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.PATTERNS_TABLE_NAME
 import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.PAT_ID_COL
 import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.TRANSACTION_TABLE_NAME
@@ -39,4 +40,7 @@ interface CategoriesAndPatternsDao {
 
     @Query("SELECT * FROM $TRANSACTION_TABLE_NAME WHERE $CAT_ID_COL = :id")
     suspend fun getCategoryTransactions(id: Int): Flow<List<TransactionEntity>>
+
+    @Query("SELECT * FROM $CATEGORIES_TABLE_NAME WHERE $ID_COL = :id")
+    suspend fun getCategoryById(id: Int): Flow<CategoryEntity>
 }
