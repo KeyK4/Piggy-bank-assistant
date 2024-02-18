@@ -1,6 +1,7 @@
 package com.example.piggy_bank_assistant.data.roomdb
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -30,17 +31,20 @@ interface CategoriesAndPatternsDao {
     suspend fun updateCategory(categoryEntity: CategoryEntity)
 
     @Query("SELECT * FROM $CATEGORIES_TABLE_NAME")
-    suspend fun getAllCategories(): Flow<List<CategoryEntity>>
+    fun getAllCategories(): Flow<List<CategoryEntity>>
 
     @Query("SELECT * FROM $PATTERNS_TABLE_NAME")
-    suspend fun getAllPatterns(): Flow<List<PatternEntity>>
+    fun getAllPatterns(): Flow<List<PatternEntity>>
 
     @Query("SELECT * FROM $CATEGORY_PATTERN_PROPORTION_TABLE_NAME WHERE $PAT_ID_COL = :id")
-    suspend fun getCategoryProportionByPattern(id: Int): Flow<List<CategoryPatternProportionEntity>>
+    fun getCategoryProportionByPattern(id: Int): Flow<List<CategoryPatternProportionEntity>>
 
     @Query("SELECT * FROM $TRANSACTION_TABLE_NAME WHERE $CAT_ID_COL = :id")
-    suspend fun getCategoryTransactions(id: Int): Flow<List<TransactionEntity>>
+    fun getCategoryTransactions(id: Int): Flow<List<TransactionEntity>>
 
     @Query("SELECT * FROM $CATEGORIES_TABLE_NAME WHERE $ID_COL = :id")
-    suspend fun getCategoryById(id: Int): Flow<CategoryEntity>
+    fun getCategoryById(id: Int): Flow<CategoryEntity>
+
+    @Delete
+    suspend fun deleteCategory(categoryEntity: CategoryEntity)
 }

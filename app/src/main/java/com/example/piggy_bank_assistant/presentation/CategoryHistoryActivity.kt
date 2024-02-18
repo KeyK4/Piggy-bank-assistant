@@ -14,6 +14,7 @@ import com.example.piggy_bank_assistant.R
 import com.example.piggy_bank_assistant.data.db.CategoryManager
 import com.example.piggy_bank_assistant.data.db.DbHelper
 import com.example.piggy_bank_assistant.data.db.HistoryManager
+import com.example.piggy_bank_assistant.presentation.main_activity.MainActivity
 
 class CategoryHistoryActivity : AppCompatActivity() {
     var id = 0

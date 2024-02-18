@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<layout>
 <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -11,3 +11,4 @@
     android:maxLines="1"
     android:singleLine="true"
     />
+</layout>

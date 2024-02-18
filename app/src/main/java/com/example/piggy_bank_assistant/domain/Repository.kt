@@ -14,4 +14,6 @@ interface Repository {
     suspend fun getCategoryHistory(category: Category): Flow<CategoryHistory>
 
     suspend fun getAllPatterns(): Flow<List<Pattern>>
+
+    suspend fun deleteCategory(category: Category)
 }

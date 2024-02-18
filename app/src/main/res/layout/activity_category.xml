@@ -1,164 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.CategoryHistoryActivity">
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.CategoryHistoryActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/back_btn"
-        android:layout_width="221dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/gray_rounded"
-        android:text="@string/back_str"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back_btn"
+            android:layout_width="221dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/gray_rounded"
+            android:text="@string/back_str"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/replenish_enter_box"
-        android:layout_width="270dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/light_gray_rounded"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:paddingLeft="15dp"
-        android:text="@string/default_num"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/replenish_text" />
+        <EditText
+            android:id="@+id/replenish_enter_box"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/light_gray_rounded"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:paddingLeft="15dp"
+            android:text="@string/default_num"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/replenish_text" />
 
-    <TextView
-        android:id="@+id/Hello_cat_View2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/category_history_caption"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/Hello_cat_View2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/category_history_caption"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/history_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/history_str"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtract_enter_box" />
+        <TextView
+            android:id="@+id/history_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/history_str"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtract_enter_box" />
 
-    <TextView
-        android:id="@+id/total_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/total_str"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Hello_cat_View2" />
+        <TextView
+            android:id="@+id/total_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/total_str"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Hello_cat_View2" />
 
-    <TextView
-        android:id="@+id/replenish_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/replenish_str"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total_View" />
+        <TextView
+            android:id="@+id/replenish_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/replenish_str"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_View" />
 
-    <TextView
-        android:id="@+id/subtract_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/subtract_str"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/replenish_enter_box" />
+        <TextView
+            android:id="@+id/subtract_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/subtract_str"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/replenish_enter_box" />
 
-    <TextView
-        android:id="@+id/total_View"
-        android:layout_width="0dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/default_num"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total_text" />
+        <TextView
+            android:id="@+id/total_View"
+            android:layout_width="0dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/default_num"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_text" />
 
-    <EditText
-        android:id="@+id/subtract_enter_box"
-        android:layout_width="270dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/light_gray_rounded"
-        android:ems="10"
-        android:inputType="number"
-        android:paddingLeft="15dp"
-        android:text="@string/default_num"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtract_text" />
+        <EditText
+            android:id="@+id/subtract_enter_box"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/light_gray_rounded"
+            android:ems="10"
+            android:inputType="number"
+            android:paddingLeft="15dp"
+            android:text="@string/default_num"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtract_text" />
 
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/back_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/history_text">
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/back_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/history_text">
 
-        <ScrollView
-            android:id="@+id/scrollView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="0dp">
-
-            <LinearLayout
-                android:id="@+id/linearMaster"
+            <ScrollView
+                android:id="@+id/scrollView3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="0dp" />
-        </ScrollView>
-    </FrameLayout>
+                android:layout_height="match_parent"
+                android:padding="0dp">
 
-    <Button
-        android:id="@+id/replenish_btn"
-        android:layout_width="53dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/add_pattern_input"
-        android:text="@string/confirm"
-        android:textSize="17sp"
-        app:layout_constraintStart_toEndOf="@+id/replenish_enter_box"
-        app:layout_constraintTop_toBottomOf="@+id/replenish_text" />
+                <LinearLayout
+                    android:id="@+id/linearMaster"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="0dp" />
+            </ScrollView>
+        </FrameLayout>
 
-    <Button
-        android:id="@+id/subtract_btn"
-        android:layout_width="53dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/add_pattern_input"
-        android:text="@string/confirm"
-        android:textSize="17sp"
-        app:layout_constraintStart_toEndOf="@+id/subtract_enter_box"
-        app:layout_constraintTop_toBottomOf="@+id/subtract_text" />
+        <Button
+            android:id="@+id/replenish_btn"
+            android:layout_width="53dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/add_pattern_input"
+            android:text="@string/confirm"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/replenish_enter_box"
+            app:layout_constraintTop_toBottomOf="@+id/replenish_text" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/subtract_btn"
+            android:layout_width="53dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/add_pattern_input"
+            android:text="@string/confirm"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/subtract_enter_box"
+            app:layout_constraintTop_toBottomOf="@+id/subtract_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

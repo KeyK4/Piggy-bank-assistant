@@ -8,6 +8,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".presentation.PiBAApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Piggybankassistant"
@@ -40,7 +41,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".presentation.CategoryAddActivity"
+            android:name=".presentation.category_add_activity.CategoryAddActivity"
             android:exported="false"
             android:theme="@style/AppTheme">
             <meta-data
@@ -66,7 +67,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".presentation.MainActivity"
+            android:name=".presentation.main_activity.MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme">
             <intent-filter>

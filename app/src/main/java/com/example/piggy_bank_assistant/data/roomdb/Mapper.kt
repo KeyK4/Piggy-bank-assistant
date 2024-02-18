@@ -4,8 +4,12 @@ import com.example.piggy_bank_assistant.domain.Category
 import com.example.piggy_bank_assistant.domain.CategoryProportion
 import com.example.piggy_bank_assistant.domain.Pattern
 import com.example.piggy_bank_assistant.domain.Transaction
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Formatter
+import javax.inject.Inject
 
-class Mapper {
+class Mapper @Inject constructor(){
     fun entityToCategory(entity: CategoryEntity): Category{
         return Category(
             id = entity.id,
@@ -64,10 +68,10 @@ class Mapper {
         return result
     }
 
-    fun entityToTransaction(entity: TransactionEntity): Transaction{
+    fun entityToTransaction(entity: TransactionEntity, formatter: SimpleDateFormat): Transaction{
         return Transaction(
             amount = entity.amount,
-            date = entity.date
+            date = formatter.parse(entity.date)?:Date()
         )
     }
 }

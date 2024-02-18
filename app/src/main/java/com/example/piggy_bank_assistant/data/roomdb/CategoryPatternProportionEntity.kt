@@ -3,6 +3,7 @@ package com.example.piggy_bank_assistant.data.roomdb
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.CAT_ID_COL
 import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabase.Companion.ID_COL
@@ -23,7 +24,7 @@ import com.example.piggy_bank_assistant.data.roomdb.CategoriesAndPatternsDatabas
     onDelete = ForeignKey.CASCADE,
     onUpdate = ForeignKey.CASCADE
 )
-])
+], indices = [Index(value = [CAT_ID_COL]), Index(value = [PAT_ID_COL])])
 data class CategoryPatternProportionEntity(
     @PrimaryKey
     @ColumnInfo(name = ID_COL)

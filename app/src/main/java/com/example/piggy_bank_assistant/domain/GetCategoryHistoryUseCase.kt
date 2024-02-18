@@ -1,10 +1,13 @@
 package com.example.piggy_bank_assistant.domain
 
-class GetCategoryHistoryUseCase (
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+
+class GetCategoryHistoryUseCase @Inject constructor(
     private val repository: Repository
 ) {
 
-    fun getCategoryHistory(category: Category): CategoryHistory{
+    suspend fun getCategoryHistory(category: Category): Flow<CategoryHistory> {
         return repository.getCategoryHistory(category)
     }
 }

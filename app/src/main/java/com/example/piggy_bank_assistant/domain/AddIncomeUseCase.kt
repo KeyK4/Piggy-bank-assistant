@@ -1,10 +1,12 @@
 package com.example.piggy_bank_assistant.domain
 
-class AddIncomeUseCase (
+import javax.inject.Inject
+
+class AddIncomeUseCase @Inject constructor(
     private val repository: Repository
 ) {
 
-    fun addIncome(pattern: Pattern, amount: Float){
-        repository.addIncome(pattern, amount)
+    suspend fun addIncome(pattern: Pattern, amount: Float){
+        repository.addTransaction(pattern.categoriesProportions, amount)
     }
 }

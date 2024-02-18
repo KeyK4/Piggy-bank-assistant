@@ -32,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -55,9 +59,14 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-common-java8:2.7.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.7.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.7.0"
 
     // Kotlin components
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+
+    implementation 'com.google.dagger:dagger:2.50'
+    kapt 'com.google.dagger:dagger-compiler:2.50'
 }

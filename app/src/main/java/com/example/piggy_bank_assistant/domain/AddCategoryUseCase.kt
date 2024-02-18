@@ -1,10 +1,12 @@
 package com.example.piggy_bank_assistant.domain
 
-class AddCategoryUseCase(
+import javax.inject.Inject
+
+class AddCategoryUseCase @Inject constructor(
     private val repository: Repository
 ) {
 
-    fun addCategory(category: Category){
+    suspend fun addCategory(category: Category){
         repository.addCategory(category)
     }
 }

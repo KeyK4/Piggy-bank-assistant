@@ -1,10 +1,12 @@
 package com.example.piggy_bank_assistant.domain
 
-class AddPatternUseCase (
+import javax.inject.Inject
+
+class AddPatternUseCase @Inject constructor(
     private val repository: Repository
 ) {
 
-    fun addPattern(pattern: Pattern){
+    suspend fun addPattern(pattern: Pattern){
         repository.addPattern(pattern)
     }
 }

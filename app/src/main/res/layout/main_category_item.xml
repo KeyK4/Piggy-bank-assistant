@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="category"
+            type="com.example.piggy_bank_assistant.domain.Category"
+            />
+    </data>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_main"
+            android:backgroundTint="@{category.color}"
+            tools:backgroundTint="@color/light_purple"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:padding="18dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{category.name}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="start"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:ellipsize="end"
+                tools:text="@string/category" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(category.amount)}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:ellipsize="end"
+                tools:text="1"
+                />
+
+        </LinearLayout>
+
+</layout>

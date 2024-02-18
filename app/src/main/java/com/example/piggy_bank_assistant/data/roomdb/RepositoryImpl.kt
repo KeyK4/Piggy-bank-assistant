@@ -3,10 +3,15 @@ package com.example.piggy_bank_assistant.data.roomdb
 import com.example.piggy_bank_assistant.domain.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import java.text.SimpleDateFormat
+import javax.inject.Inject
 
-class RepositoryImpl(private val cnpDao: CategoriesAndPatternsDao):Repository {
+class RepositoryImpl @Inject constructor(
+    private val cnpDao: CategoriesAndPatternsDao,
+    private val mapper: Mapper
+):Repository {
 
-    private val mapper = Mapper()
+
 
     override suspend fun addCategory(category: Category) {
         val categoryEntity = mapper.categoryToEntity(category)
@@ -53,8 +58,9 @@ class RepositoryImpl(private val cnpDao: CategoriesAndPatternsDao):Repository {
         return flow{
             cnpDao.getCategoryTransactions(category.id).collect{
                 val transactions = mutableListOf<Transaction>()
+                val formatter = SimpleDateFormat("dd.MM.yyyy")
                 for(i in it){
-                    transactions.add(mapper.entityToTransaction(i))
+                    transactions.add(mapper.entityToTransaction(i, formatter))
                 }
                 emit(CategoryHistory(category, transactions))
             }
@@ -83,6 +89,10 @@ class RepositoryImpl(private val cnpDao: CategoriesAndPatternsDao):Repository {
             }
             emit(patternsRes)
         }
+    }
+
+    override suspend fun deleteCategory(category: Category) {
+        cnpDao.deleteCategory(mapper.categoryToEntity(category))
     }
 
 }
