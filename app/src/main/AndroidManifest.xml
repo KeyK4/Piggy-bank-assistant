@@ -49,7 +49,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".presentation.CategoryHistoryActivity"
+            android:name=".presentation.category_history_activity.CategoryHistoryActivity"
             android:exported="false"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden|adjustPan">

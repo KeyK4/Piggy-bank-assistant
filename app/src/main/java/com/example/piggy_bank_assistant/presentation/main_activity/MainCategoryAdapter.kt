@@ -31,7 +31,6 @@ class MainCategoryAdapter: ListAdapter<Category, MainCategoryAdapter.MainCategor
     override fun onBindViewHolder(holder: MainCategoryViewHolder, position: Int) {
         val binding = holder.binding
         if(binding is MainCategoryItemBinding){
-            Log.d("MainCategoryAdapter", "position = $position")
             val category = getItem(position)
             binding.category = category
             binding.root.setOnClickListener{

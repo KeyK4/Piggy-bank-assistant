@@ -6,7 +6,6 @@ import com.example.piggy_bank_assistant.domain.Category
 
 class CategoryDiffCallback: DiffUtil.ItemCallback<Category>() {
     override fun areItemsTheSame(oldItem: Category, newItem: Category): Boolean {
-        Log.d("DiffUtil", "old = $oldItem; new = $newItem")
         return oldItem.id == newItem.id
     }
 

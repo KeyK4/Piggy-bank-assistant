@@ -9,8 +9,6 @@ class CategoryAddViewModel @Inject constructor(
     private val addCategoryUseCase: AddCategoryUseCase
 ): ViewModel() {
 
-
-
     suspend fun addCategory(category: Category){
         addCategoryUseCase.addCategory(category = category)
     }

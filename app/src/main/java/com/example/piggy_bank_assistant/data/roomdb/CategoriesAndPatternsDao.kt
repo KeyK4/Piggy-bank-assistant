@@ -43,7 +43,10 @@ interface CategoriesAndPatternsDao {
     fun getCategoryTransactions(id: Int): Flow<List<TransactionEntity>>
 
     @Query("SELECT * FROM $CATEGORIES_TABLE_NAME WHERE $ID_COL = :id")
-    fun getCategoryById(id: Int): Flow<CategoryEntity>
+    fun getCategoryByIdAsFlow(id: Int): Flow<CategoryEntity>
+
+    @Query("SELECT * FROM $CATEGORIES_TABLE_NAME WHERE $ID_COL = :id")
+    fun getCategoryByIdAsEntity(id: Int): CategoryEntity
 
     @Delete
     suspend fun deleteCategory(categoryEntity: CategoryEntity)

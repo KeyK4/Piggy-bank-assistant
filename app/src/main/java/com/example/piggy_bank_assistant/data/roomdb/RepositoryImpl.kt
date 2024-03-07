@@ -3,16 +3,12 @@ package com.example.piggy_bank_assistant.data.roomdb
 import com.example.piggy_bank_assistant.domain.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import java.text.SimpleDateFormat
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(
     private val cnpDao: CategoriesAndPatternsDao,
     private val mapper: Mapper
 ):Repository {
-
-
-
     override suspend fun addCategory(category: Category) {
         val categoryEntity = mapper.categoryToEntity(category)
         cnpDao.addCategory(categoryEntity)
@@ -23,14 +19,10 @@ class RepositoryImpl @Inject constructor(
         amount: Float
     ) {
         for(cp in categoriesProportion){
-            val newAmount = cp.category.amount+amount*cp.proportion
-            val categoryEntity = mapper.categoryToEntity(Category(
-                id = cp.category.id,
-                amount = newAmount,
-                color = cp.category.color,
-                name = cp.category.name
-            ))
-            cnpDao.updateCategory(categoryEntity)
+            val oldCategoryEntityValue = cnpDao.getCategoryByIdAsEntity(cp.category.id)
+            val newAmount = oldCategoryEntityValue.amount+amount*cp.proportion
+            val newCategoryEntityValue = oldCategoryEntityValue.copy(amount = newAmount)
+            cnpDao.updateCategory(newCategoryEntityValue)
         }
     }
 
@@ -58,9 +50,8 @@ class RepositoryImpl @Inject constructor(
         return flow{
             cnpDao.getCategoryTransactions(category.id).collect{
                 val transactions = mutableListOf<Transaction>()
-                val formatter = SimpleDateFormat("dd.MM.yyyy")
                 for(i in it){
-                    transactions.add(mapper.entityToTransaction(i, formatter))
+                    transactions.add(mapper.entityToTransaction(i))
                 }
                 emit(CategoryHistory(category, transactions))
             }
@@ -75,7 +66,7 @@ class RepositoryImpl @Inject constructor(
                     val catPatsRes = mutableListOf<CategoryProportion>()
                     cnpDao.getCategoryProportionByPattern(pattern.id).collect{catPats ->
                         for(catPat in catPats){
-                            cnpDao.getCategoryById(catPat.categoryId).collect{
+                            cnpDao.getCategoryByIdAsFlow(catPat.categoryId).collect{
                                 catPatsRes.add(CategoryProportion(
                                     category = mapper.entityToCategory(it),
                                     id = catPat.id,
@@ -95,4 +86,11 @@ class RepositoryImpl @Inject constructor(
         cnpDao.deleteCategory(mapper.categoryToEntity(category))
     }
 
+    override suspend fun getCategoryById(id: Int): Flow<Category> {
+        return flow{
+            cnpDao.getCategoryByIdAsFlow(id).collect{
+                emit(mapper.entityToCategory(it))
+            }
+        }
+    }
 }

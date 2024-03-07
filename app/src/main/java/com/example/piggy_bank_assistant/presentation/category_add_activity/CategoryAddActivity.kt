@@ -46,7 +46,7 @@ class CategoryAddActivity : AppCompatActivity() {
             val radioButton: RadioButton = findViewById(checkedRadioButtonId)
             val color = radioButton.currentTextColor
             val newCategory = Category(
-                id = 0,
+                id = Category.UNDEFINED_ID,
                 name = binding.nameEnterBox.text.toString(),
                 amount = binding.amountEnterBox.text.toString().toFloat(),
                 color = color

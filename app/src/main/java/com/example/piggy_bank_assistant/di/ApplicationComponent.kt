@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.piggy_bank_assistant.presentation.category_add_activity.CategoryAddActivity
 import com.example.piggy_bank_assistant.presentation.main_activity.MainActivity
 import com.example.piggy_bank_assistant.presentation.ViewModelFactory
+import com.example.piggy_bank_assistant.presentation.category_history_activity.CategoryHistoryActivity
 import dagger.BindsInstance
 import dagger.Component
 
@@ -16,9 +17,11 @@ import dagger.Component
 )
 interface ApplicationComponent {
 
-    fun inject(activity: MainActivity)
+    fun inject(mainActivity: MainActivity)
 
-    fun inject(fragment: CategoryAddActivity)
+    fun inject(categoryAddActivity: CategoryAddActivity)
+
+    fun inject(categoryHistoryActivity: CategoryHistoryActivity)
 
     fun viewModelsFactory(): ViewModelFactory
 

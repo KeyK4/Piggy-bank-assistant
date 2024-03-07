@@ -4,19 +4,22 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.piggy_bank_assistant.data.db.DbHelper
 import com.example.piggy_bank_assistant.databinding.ActivityMainBinding
-import com.example.piggy_bank_assistant.presentation.CategoryHistoryActivity
+import com.example.piggy_bank_assistant.presentation.category_history_activity.CategoryHistoryActivity
 import com.example.piggy_bank_assistant.presentation.ConsumptionAdd
 import com.example.piggy_bank_assistant.presentation.IncomeAddActivity
 import com.example.piggy_bank_assistant.presentation.PiBAApplication
 import com.example.piggy_bank_assistant.presentation.SettingsActivity
 import com.example.piggy_bank_assistant.presentation.ViewModelFactory
 import com.example.piggy_bank_assistant.presentation.category_add_activity.CategoryAddActivity
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -70,21 +73,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpCategoriesListAdapter() {
         categoriesListAdapter = MainCategoryAdapter()
-        with(categoriesListAdapter){
-            onCategoryClickListener = {
-                val intent = Intent(this@MainActivity, CategoryHistoryActivity::class.java)
-                intent.putExtra(DbHelper.ID_COL, it.id)
-                intent.putExtra(DbHelper.NAME_COl, it.name)
-                startActivity(intent)
-            }
+        categoriesListAdapter.onCategoryClickListener = {
+            val intent = CategoryHistoryActivity.getIntent(this@MainActivity, it)
+            startActivity(intent)
         }
-
     }
 
     private fun observeViewModel(){
-        lifecycleScope.launch {
-            viewModel.getAllCategories().collect{
-                categoriesListAdapter.submitList(it)
+        lifecycleScope.launch(Dispatchers.IO) {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.getAllCategories().collect {
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        categoriesListAdapter.submitList(it)
+                    }
+                }
             }
         }
     }
